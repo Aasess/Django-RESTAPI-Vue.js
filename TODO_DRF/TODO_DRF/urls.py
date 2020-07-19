@@ -16,14 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 #from rest_framework.urlpatterns import format_suffix_patterns
-from webapp import views
+from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.home),
-    path('employee/',views.EmployeeView,name="employeelist"),
-    path('employee/<int:pk>',views.EmployeeDetail),
-    path('employee/create',views.EmployeeCreate),
-    path('employee/<int:pk>/update',views.EmployeeUpdate),
-    path('employee/<int:pk>/delete',views.EmployeeDelete)
+    path('api/',views.apiOverview,name="API overview"),
+    path('api/todo/',views.TODOView,name="todo"),
+    path('api/todo/<int:pk>',views.TODODetail),
+    path('api/todo/create',views.TODOCreate),
+    path('api/todo/<int:pk>/update',views.TODOUpdate),
+    path('api/todo/<int:pk>/delete',views.TODODelete)
 ]

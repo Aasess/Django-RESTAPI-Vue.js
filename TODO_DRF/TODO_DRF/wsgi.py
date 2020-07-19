@@ -1,5 +1,5 @@
 """
-WSGI config for restframeworkfromscratch project.
+WSGI config for TODO_DRF project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'restframeworkfromscratch.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TODO_DRF.settings')
 
 application = get_wsgi_application()
