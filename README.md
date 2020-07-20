@@ -28,4 +28,7 @@ python manage.py migrate</pre>
 ## API call
 http://127.0.0.1:8000/api/
 
+<img src="demo/apioverview.PNG" width="300px" height="300px">
+
 ## Demo
+
