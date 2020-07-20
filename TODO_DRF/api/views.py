@@ -22,7 +22,7 @@ def apiOverview(request):
 #listtodo
 @api_view(['GET'])
 def TODOView(request):
-    todo = TODO.objects.order_by('-id')
+    todo = TODO.objects.all().order_by('-id')
     # serialize them
     serialize = TODOSerializer(todo,many=True) #return multiple json data
     #return JSON
