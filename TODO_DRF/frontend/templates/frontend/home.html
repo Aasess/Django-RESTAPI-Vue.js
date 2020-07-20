@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+        <title>TODO</title>
+    {% endblock %}
+
+{% block content %}
+{% verbatim %}
+<div class="container mt-5 bg-dark text-white w-50">
+    <div id="app">
+     <div class="row">
+            <div class="col mt-2 text-center">
+                <h1>TODO LIST</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-12">
+                <form class="form-inline" @submit.prevent="submitForm">
+                    <input type="text" class="form-control col-9 ml-2" placeholder="Add new todo" v-model="newtask.title">
+                    <button type="submit" class="form-control btn btn-outline-success col-2 ml-3">Create</button>
+                </form>
+                <hr color="white"/>
+                <div class="card bg-dark mt-2" v-for="(task, index) in tasks" :class="{completed:task.completed}" @click = "completeTask(task)">
+                    <div class="card-body">
+                        {{ task.title }}
+
+                        <button type="button" class="close float-right text-white" @click.stop=" deleteTask(task)">
+                            <span>&times;</span>
+                        </button>
+                        <a type="button" class="float-right mr-3 text-secondary" @click.stop = "$data.newtask=task"><i class="edit outline icon"></i></a>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+        <br/>
+</div>
+</div>
+{% endverbatim %}
+
+{% endblock %}
